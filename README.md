@@ -1,4 +1,4 @@
-# Implementation of cadet
+# Implementation of CADet
 
 
 
