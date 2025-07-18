@@ -1,0 +1,25 @@
+DATA:
+  benchmark: 'cracktav' # benchmark name, choices ['drive', 'cracktree200', 'crack500', 'roads]
+  datapath: datasets/cracktav
+  classes: 1
+
+MODEL:
+  architecture: 'cadet'
+  backbone: 'resbase32'
+  steps: 2
+  use_gau: [True, True, True, True, True]
+  use_fim: [True, True, True, True]
+  up: [True, True, True, True]
+  reduce_dim: False
+  # 跳连线上的模块设定
+  sat_pos: [360, 180, 90, 45, 22]
+  module: ['GAU', 'GAU', 'GAU', 'SAT', 'SAT']
+  use_fusion: True
+  dual_decoder: False
+  dual_module: ['GAU', 'GAU', 'GAU', 'SAT', 'SAT']
+
+TEST:
+  weight: /root/autodl-tmp/cadet/logs/cadet_cracktav_SAT_FFD_bs4.log/best_model.pt
+  train_gpu: [ 0 ]  # 如果使用多张GPU, 可以是 [0, 1] 等
+  batch_size_val: 1  # 示例值，可以根据你的硬件情况调整
+  nworker: 4  # 示例值，可以根据你的硬件配置调整

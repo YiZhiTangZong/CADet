@@ -1,0 +1,16 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 日志与模型
+logs/
+*.log
+*.ckpt
+*.pth
+
+# macOS
+.DS_Store
+
